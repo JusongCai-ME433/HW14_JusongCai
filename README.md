@@ -1,1 +1,7 @@
 # HW14_JusongCai
+
+In HW14, I soldered PCB with all units instructed: PIC32, push buttons, capacitors, resistors, regulators, LEDs, USB mini connector, female header pins, right programmer headers, switch. I wrote a PIC32 Harmony program (USB communication with CDC) that PIC32 will send a number to my Android device 5 times per second. I also wrote an Android App with a slide bar to update value, a textview to display the slider value, a button to hit to send the value to PIC32, a textview to display what was sent to PIC32, and a textview wrapped in a scrollview to display what was received from the PIC32.
+
+Harmony project codes are under the directory "firmware/src": "app.c/h" send a number to the host (either PuTTY or an Android device) 5 times per second; "main.c" is the main function controlling app. Android project codes are under the directory "Android_Project/app/src/main": "MainActivity.java" initializes the USB host code, adds permission to access USB, detects when the PIC32 is plugged in, and appends the received data to the data that is ready in the green textview; "activity_main.xml" contains the layout of text, view of the app including slider, button, textview, scrollview; "AndroidManifest.xml" gives the app permission to access USB communication and device_filter; "device_filter.xml" identifies the PIC USB PID and VID codes; "classes.jar" is the precompiled USB library.
+
+Results are shown as three pictures of PCB and App screenshot, as well as a demo video of how the communication between PIC32 and Android device works.
